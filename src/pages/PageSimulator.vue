@@ -9,7 +9,7 @@
               label="Valor do emprestimo"
               :error="valueLoan < 0"
               msg="Digite uma valor maior que Zero"
-              v-model="valueLoan"
+              v-model.number="valueLoan"
               />
           </div>
         </div>
@@ -74,8 +74,8 @@ export default {
         {chave: 72, valor: 72},
         {chave: 84, valor: 84},
       ],
-      valueLoan: 0,
-      selectInstitutions: false,
+      valueLoan: 0.00,
+      selectInstitutions: [],
       selectAgreements: [],
       portion: false
     }
@@ -97,7 +97,7 @@ export default {
   methods: {
     getSimulation () {
       const postData = {
-        valor_emprestimo: this.value,
+        valor_emprestimo: this.valueLoan,
         instituicoes: this.selectInstitutions,
         convenios: this.selectAgreements,
         parcela: this.portion
