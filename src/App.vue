@@ -1,19 +1,14 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <button class="btn btn-primary">Teste</button>
+    <PageSimulator/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import PageSimulator from "./pages/PageSimulator.vue";
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  components: { PageSimulator }
 }
 </script>
 
